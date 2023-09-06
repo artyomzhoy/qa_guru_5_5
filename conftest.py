@@ -21,7 +21,7 @@ def browser_settings():
         "browserVersion": '100.0',
         "selenoid:options": {
             "enableVNC": True,
-            "enableVideo": False
+            "enableVideo": True
         }
     }
 

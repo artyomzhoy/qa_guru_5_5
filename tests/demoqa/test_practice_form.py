@@ -32,9 +32,10 @@ def test_decorator_allure_steps_practice_form():
     select_hobbies()
     submit_all()
     check_data()
+    attach.add_html(browser)
     attach.add_screenshot(browser)
     attach.add_logs(browser)
-    attach.add_html(browser)
+    attach.add_video(browser)
 
 
 @allure.step('Открытие формы')
