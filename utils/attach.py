@@ -14,4 +14,4 @@ def add_logs(browser):
 
 def add_html(browser):
     html = browser.driver.page_source
-    allure.attach(html, 'HTML', AttachmentType.HTML, '.html')
+    allure.attach(html, 'page_source', AttachmentType.HTML, '.html')
