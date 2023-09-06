@@ -9,7 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 @pytest.fixture(scope='function', autouse=True)
 def browser_settings():
-    # локальная сборка
+    # локальная сборка webdriver-manager==4.0.0
     # options = webdriver.ChromeOptions()
     # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install(), options=options))
     # browser.config.driver = driver
