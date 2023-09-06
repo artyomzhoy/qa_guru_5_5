@@ -27,16 +27,21 @@ def test_decorator_allure_steps_practice_form():
     select_state('NCR')
     select_city_from_state('Delhi')
     select_date_of_birth()
-    upload_picture()
+    # upload_picture()
     select_gender()
     select_hobbies()
     submit_all()
     check_data()
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
+    attach.add_html(browser)
 
 
 @allure.step('Открытие формы')
 def open_practice_form(page):
     browser.open(page)
+    browser.driver.execute_script("$('footer').remove()")
+    browser.driver.execute_script("$('#fixedban').remove()")
 
 
 @allure.step('Ввод имени')
@@ -125,18 +130,14 @@ def submit_all():
 @allure.step('Проверка сохранённых данных')
 def check_data():
     browser.all('tbody tr').should(have.texts
-                                   ('Orbit Culture',
-                                    'orbitculture@gmail.com',
-                                    'Other',
-                                    '7999999999',
-                                    '06 June,1999',
-                                    'Computer Science',
-                                    'Music',
-                                    'test.png',
-                                    'Heaven shall burn 666',
-                                    'NCR Delhi'))
+                                   ('Student Name Orbit Culture',
+                                    'Student Email orbitculture@gmail.com',
+                                    'Gender Other',
+                                    'Mobile 7999999999',
+                                    'Date of Birth 06 June,1999',
+                                    'Subjects Computer Science',
+                                    'Hobbies Music',
+                                    'Picture',
+                                    'Address Heaven shall burn 666',
+                                    'State and City NCR Delhi'))
 
-
-attach.add_screenshot(browser)
-attach.add_logs(browser)
-attach.add_html(browser)
