@@ -3,6 +3,10 @@ import allure
 
 from selene import browser, have
 from allure_commons.types import Severity
+
+from utils import attach
+
+
 # from selenium.webdriver import Keys
 
 
@@ -82,6 +86,7 @@ def select_city_from_state(city):
     browser.element('#city').click()
     browser.element('#react-select-4-option-0').should(have.exact_text(city)).click()
 
+
 # Ввод значений в поле даты
 # browser.element('#dateOfBirthInput').send_keys(Keys.CONTROL, 'a').type('06 June 1999').press_enter()
 
@@ -130,3 +135,8 @@ def check_data():
                                     'test.png',
                                     'Heaven shall burn 666',
                                     'NCR Delhi'))
+
+
+attach.add_screenshot(browser)
+attach.add_logs(browser)
+attach.add_html(browser)
