@@ -45,4 +45,4 @@ def browser_settings():
     attach.add_screenshot(browser)
     attach.add_logs(browser)
     attach.add_video(browser)
-    browser.close()
+    browser.quit()
